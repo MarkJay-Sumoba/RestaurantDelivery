@@ -1,0 +1,21 @@
+[ To Do - Progress ] (10/15)
+1. Database analysis 
+(1) Determine the purpose of Database : Done
+(2) Determine the Entities (Table) necessary : Done
+(3) Determine the Attribute (fields) : Done
+
+2. Data Dictionary
+(1) Initial version : Done 
+ > To be review
+
+3. ERD 
+(1) Initial version : Done
+ > To be reivew
+
+4. Normalization
+> In progress
+
+
+
+
+
