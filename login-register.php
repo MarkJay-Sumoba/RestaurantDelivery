@@ -1,5 +1,4 @@
 <?php
- 
  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   echo "--==Post Method was used==--";
   echo "<pre>";
@@ -7,8 +6,8 @@
   echo "</pre>";
 
     // Define and initialize variables
-    $username = $password = "";
-    $username_err = $password_err = "";
+    $email = $password = "";
+    $email_err = $password_err = "";
   
     // Get form data
     $username = trim($_POST["username"]);
@@ -16,7 +15,7 @@
   
     // Validate email
     if (empty($email)) {
-        $username_err = "Please enter your email.";
+        $email_err = "Please enter your email.";
     }
   
     // Validate password
@@ -24,7 +23,7 @@
         $password_err = "Please enter your password.";
     }
  } 
-
+ ?>
 
 <div class="login-register-container d-flex justify-content-center align-items-center">
   <span class="icon-close d-flex justify-content-center align-items-center"><i class="bi bi-x"></i></span>
@@ -93,4 +92,4 @@
 
 </div>
 
-?>
+
