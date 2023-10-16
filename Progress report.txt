@@ -1,0 +1,21 @@
+Created Figma Wireframe
+
+Created Main page
+Created the header
+Inserted the background
+Created the buttons
+Inserted the pictures
+Created the footer
+Inserted the text
+
+Created Menu page
+Created the header
+Created the buttons
+Created the footer
+Inserted the text
+
+Created Login page
+Created the header
+Created the buttons
+Created the footer
+Inserted the text
