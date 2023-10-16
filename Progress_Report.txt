@@ -1,0 +1,15 @@
+Progress Report
+2023-10-15
+
+1.index.html added
+style.css added
+script.js added
+image downloaded
+
+2.Designing demo Homepage with login
+To be reviewed
+
+3.Menu page added
+Login in menu page not functional
+search bar not functional
+To be reviewed
