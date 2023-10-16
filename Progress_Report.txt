@@ -1,6 +1,13 @@
 Progress Report
-2023-10-15
+2023-10-13
+1. Github repo created
+new branch created for each team member
 
+2. Trello kanban board created to apoint task for each member
+
+3. Figma created for wireframe/design for website
+
+2023-10-15
 1.index.html added
 style.css added
 script.js added
@@ -13,3 +20,6 @@ To be reviewed
 Login in menu page not functional
 search bar not functional
 To be reviewed
+
+2023-10-16
+1.
