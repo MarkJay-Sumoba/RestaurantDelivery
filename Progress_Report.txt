@@ -21,5 +21,20 @@ Login in menu page not functional
 search bar not functional
 To be reviewed
 
+2023-10-16
+1. Figma updated collaborated with Sangkyu
+- register wireframe added
+- order wireframe added
+- online-order menu page updated
+
+2. Review on the ERD
+
 2023-10-17
-1.
+1. Menu Page updated 
+- order summary has been added
+- menu card added 
+- menu.js created
+- menu.css created
+
+3. Text document for initial workflow added.
+- Topic design, color, font and data model to be reviewed
