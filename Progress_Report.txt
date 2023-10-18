@@ -35,6 +35,11 @@ To be reviewed
 - menu card added 
 - menu.js created
 - menu.css created
+- Color and Fonts updated
 
-3. Text document for initial workflow added.
-- Topic design, color, font and data model to be reviewed
+2. Index Page updated
+- Color and Fonts updated
+- Text contents updated
+
+3. Text document for initial-workflow added.
+

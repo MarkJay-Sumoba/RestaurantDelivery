@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Merriweather&display=swap");
+
+* {
+  font-family: "Merriweather", serif;
+}
+
 .logo {
   color: aliceblue;
   font-size: 25px;
@@ -34,6 +40,10 @@ nav .shopping span {
   font-weight: 600;
 }
 
+.container-1-item h2 {
+  text-decoration: underline;
+}
+
 .category-btn {
   width: 150px;
 }
@@ -61,6 +71,8 @@ nav .shopping span {
 }
 
 .list .item .title {
+  font-size: 25px;
+  font-family: "Dancing Script", cursive;
   font-weight: 600;
 }
 
