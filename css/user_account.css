@@ -8,6 +8,20 @@ body {
   height: auto;
 }
 
+.navbar-logo {
+  color: aliceblue;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.navbar-logo span {
+  color: darkorange;
+}
+
+.nav-link {
+  font-size: 25px;
+}
+
 .btn-default {
   border-color: rgba(24, 28, 33, 0.1);
   background: rgba(0, 0, 0, 0);
