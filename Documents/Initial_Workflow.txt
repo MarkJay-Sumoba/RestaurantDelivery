@@ -1,0 +1,27 @@
+In the early stages of the project, research was conducted to understand the principles of user-friendly design. This included an analysis of competitors' websites and emerging design trends. Our team decided with 2 pages of html the index and the menu page.
+
+The index page:
+1. The navigation bar which consists the company name, links (menu, about us, contact us), and the login-register form.
+2. The header includes a welcoming message to the users and a link to the menu page.
+3. The gallery includes photos of the dish
+4. About us contains a biography of the restaurant and its foundation.
+5. Contact Us includes the company contact and social media as well an interactive map to find the location and a section to leave a message.
+The login/register form in the navigation bar in the index page users can sign up by providing information such as a username, email, password, and other relevant details and vice versa, registered users can access their accounts by entering their credentials. These forms will be handled by php scripts which validate the submission form, validate user input, verifies the information and interact with our database.
+
+The menu page:
+1. Navigation contains the companies name, a search bar to filter the menu and the cart which related when a dish is added to the order.
+2. Categories which filter the dishes by category (e.g all, popular dishes, entree, main dish, dessert, beverage etc..)
+3. The Dish which includes the name and the price and as well the add to order button.
+The cart in the menu page is an interactive option when clicked an order summary window pops up which contains the order added that includes the dish name, price and the quantity on which you can add the quantity or reduce. When the quantity is reduce to 0 the order added is then removed. Each order item is added the total price of the order items is then displayed. There will also have an option weather the customer wants the order items to be picked up or delivered. When delivered is selected another an address form will be asked. Thus, the order will be completed by clicking on the checkout button.
+These findings influenced the overall layout, content structure, and interactive elements on the site.
+
+The selection of colors was decided by how the menu will be presented. The basic contrast between black and white gives the website an atmosphere of simple elegance design. It can give users the vibe of a fine dining restaurant yet affordable for delivery. Buttons are consistent with bright colors to attract the users eyes. Multiple fonts were considered, and user testing was employed to identify the most legible and visually appealing options. The chosen fonts not only complemented the design but also enhanced the user experience of the website.
+
+Wireframes were instrumental in planning the layout and content hierarchy. Prior to the development phase, with the use of Figma** to design our wireframe we are able to get a structure of how our website would look like. As we progress through the development phase the design will surely change from our initial model.
+
+To meet the business requirements, we thoroughly examined the use cases of customers, administrators, and employees within the delivery service framework. As part of the analysis of these business requirements, we identified and defined the relevant entities and their associated attributes. Subsequently, we developed an Entity-Relationship (ER) diagram to visually represent these elements and their relationships.
+
+Throughout this analysis and design process, data underwent a refinement stage to ensure it conformed to the principles of Third Normal Form (3NF), a key aspect of database normalization.
+
+**https://www.figma.com/file/iyZb6dDdKOZfMkuYS1n0PT/Wireframe?type=design&node-id=0%3A1&mode=design&t=7HjDzlFRua4Vqram-1
+
