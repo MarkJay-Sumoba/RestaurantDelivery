@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Merriweather&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather", serif;
+}
+
+/* Navbar */
+.navbar-logo {
+  color: aliceblue;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.navbar-logo span {
+  color: darkorange;
+}
+
+/* Login-Register */
+.login-register-container {
+  height: 100vh;
+  width: 100%;
+  background: url("../image/background.jpg");
+  background-size: cover;
+}
+
+.form-box {
+  width: 450px;
+  height: 550px;
+  position: relative;
+  background: transparent;
+  backdrop-filter: blur(20px);
+  padding: 5px;
+  overflow: hidden;
+  border: 1px solid #000;
+}
+
+.button-box {
+  width: 250px;
+  margin: 35px auto;
+  position: relative;
+  box-shadow: 0 0 20px 9px #ff61241f;
+  border-radius: 30px;
+}
+
+.toggle-btn {
+  padding: 10px 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+  color: aliceblue;
+}
+
+#btn {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 110px;
+  height: 100%;
+  background: linear-gradient(to right, #544d4f, #ffae0d);
+  border-radius: 30px;
+  transition: 0.5s;
+}
+
+.input-group {
+  top: 180px;
+  position: absolute;
+  width: 280px;
+  transition: 0.5s;
+}
+
+.input-box .input-field {
+  width: 300px;
+  margin: 5px 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #999;
+  outline: none;
+  background: transparent;
+  color: #fff;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  color: #666;
+  transform: translateY(-20px);
+}
+
+.input-box label {
+  position: absolute;
+  left: 5px;
+  pointer-events: none;
+  transition: 0.5s;
+  color: aliceblue;
+}
+
+.input-box .icon {
+  position: absolute;
+  right: 5px;
+  transition: 0.5s;
+  color: aliceblue;
+}
+
+.submit-btn {
+  width: 70%;
+  cursor: pointer;
+  background: linear-gradient(to right, #544d4f, #ffae0d);
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+}
+
+.check-box {
+  margin-right: 5px;
+  bottom: 68px;
+}
+
+.remember-forgot {
+  width: 100%;
+  font-size: 12px;
+  color: aliceblue;
+}
+
+.remember-forgot a {
+  text-decoration: none;
+}
+
+.agree_terms label {
+  font-size: 12px;
+  color: aliceblue;
+}
+
+#login {
+  left: 50px;
+}
+
+#register {
+  left: 450px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* PHP */
+.error-msg {
+  color: red;
+  font-size: 14px;
+}
+
+.success-msg {
+  color: blue;
+  font-size: 14px;
+}
