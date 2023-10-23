@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Merriweather", serif;
 }
 
@@ -81,6 +82,7 @@
   border-bottom: 1px solid #999;
   outline: none;
   background: transparent;
+  color: #fff;
 }
 
 .input-box input:focus ~ label,
@@ -110,6 +112,7 @@
   background: linear-gradient(to right, #544d4f, #ffae0d);
   border: 0;
   outline: none;
+  border-radius: 30px;
 }
 
 .check-box {
@@ -127,8 +130,9 @@
   text-decoration: none;
 }
 
-.terms {
+.agree_terms label {
   font-size: 12px;
+  color: aliceblue;
 }
 
 #login {
@@ -141,4 +145,15 @@
 
 .hidden {
   display: none;
+}
+
+/* PHP */
+.error-msg {
+  color: red;
+  font-size: 14px;
+}
+
+.success-msg {
+  color: blue;
+  font-size: 14px;
 }

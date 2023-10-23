@@ -22,7 +22,7 @@ search bar not functional
 To be reviewed
 
 2023-10-16
-1. Figma updated collaborated with Sangkyu
+1. Figma updated (collaborated with Sangkyu)
 - register wireframe added
 - order wireframe added
 - online-order menu page updated
@@ -42,4 +42,47 @@ To be reviewed
 - Text contents updated
 
 3. Text document for initial-workflow added.
+
+2023-10-18
+1. gallery.php added (collaboarated with SangKyu)
+- Completed
+
+2. index.php added
+
+3. fsd10_victor database created from phpmyadmin
+- tblgallery table added
+- fsduser User added
+
+4. Initial Workflow sent
+- Figma screenshots
+- Initial-workflow 
+- ERD
+- Source Code Demo design
+
+
+2023-10-19
+1. fsd10_victor database updated
+- users table added
+
+2. 1. Trello updated
+- New Task added for development phase.
+
+2023-10-21/22
+1. Login-register.php added
+
+2. Register.php added (collaboarated with SangKyu)
+- validation and sanitization for email and password
+- register user in database 
+- in progress 
+
+3. Login-register.html/.css/.js added
+- Design changed from previous
+
+4. user_settings.html/.css added
+
+5. login.php added
+- In progress
+
+2023-10-23
+
 
