@@ -50,6 +50,7 @@ function initApp() {
   products.forEach((value, key) => {
     let newDiv = document.createElement("div");
     newDiv.classList.add("item");
+    //Order Item image > dish-name > price > qty
     newDiv.innerHTML = `
             <img src="image/${value.image}">
             <div class="title">${value.name}</div>

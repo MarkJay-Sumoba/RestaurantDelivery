@@ -1,4 +1,6 @@
 <?php
+// require the functions files
+// require "includes/functions.php";
 
 // variable
 $dbType = "mysql"; // type of database to connect to
@@ -13,8 +15,14 @@ $dbPassword ="myDBpw"; // $dbUsername password
 
 $dbDSN = "{$dbType}:host={$dbServer};dbname={$dbName};port={$dbPort};charset={$dbCharset}";
 
-// open database connection
-$db = new PDO($dbDSN, $dbUsername, $dbPassword);
 
+// open database connection
+try{
+$db = new PDO($dbDSN, $dbUsername, $dbPassword);
+  // if the connection is successful
+  echo "Connected to the database successfully.";
+}catch (PDOException $err){
+  echo "Connect failed: " . $err->getMessage();
+}
 
 ?>
