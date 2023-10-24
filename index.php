@@ -14,7 +14,7 @@
   <body>
     <nav class="navbar navbar-dark bg-dark navbar-expand-md>
       <div class="container-fluid">
-        <a class="navbar-logo px-3" href="Index.php">Delivery<span>Chef</span></a>
+        <a class="navbar-logo px-3" href="index.php">Delivery<span>Chef</span></a>
 
         <ul class="navbar-nav ms-auto flex-row flex-wrap mx-center my-auto">
           <li class="nav-item"><a class="nav-link mx-3 text-white" href="Menu.html">Menu</a></li>
@@ -22,11 +22,27 @@
           <li class="nav-item"><a class="nav-link mx-3 text-white" href="#contact-us">Contact Us</a></li>
         </ul>
 
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-              <a class="nav-link login-window text-white mx-3" href="Login-Register.php"><i class="bi bi-person-circle mx-1 text-white"></i>Login</a>
-          </li>
-      </ul>
+        <?php
+        session_start();
+// Check if the user is logged in (you can change this condition as needed)
+if (isset($_SESSION["user_id"])) {
+    echo 
+  '<div class="dropdown navbar-nav ms-auto">
+    <button class="dropbtn mx-4">Profile</button>
+    <div class="dropdown-content">
+        <a href="profile.php">My Profile</a>
+        <a href="logout.php">Logout</a>
+    </div>
+  </div>';
+} else {
+    echo '<ul class="navbar-nav ms-auto">
+    <li class="nav-item">
+        <a class="nav-link login-window text-white mx-3" href="login.php"><i class="bi bi-person-circle mx-1 text-white"></i>Login</a>
+    </li>
+</ul>';
+
+}
+?>
       </div>
     </nav>
 

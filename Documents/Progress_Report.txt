@@ -83,6 +83,13 @@ To be reviewed
 5. login.php added
 - In progress
 
-2023-10-23
+2023-10-24
+1. login.php
+- validation and sanitization for email and password
+- session begins
+
+2. index.php
+- login button added when not in session
+- profile button added when in sesssion
 
 

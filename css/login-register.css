@@ -33,26 +33,7 @@
   background: transparent;
   backdrop-filter: blur(20px);
   padding: 5px;
-  overflow: hidden;
   border: 1px solid #000;
-}
-
-.button-box {
-  width: 250px;
-  margin: 35px auto;
-  position: relative;
-  box-shadow: 0 0 20px 9px #ff61241f;
-  border-radius: 30px;
-}
-
-.toggle-btn {
-  padding: 10px 30px;
-  cursor: pointer;
-  background: transparent;
-  border: 0;
-  outline: none;
-  position: relative;
-  color: aliceblue;
 }
 
 #btn {
@@ -135,19 +116,6 @@
   color: aliceblue;
 }
 
-#login {
-  left: 50px;
-}
-
-#register {
-  left: 450px;
-}
-
-.hidden {
-  display: none;
-}
-
-/* PHP */
 .error-msg {
   color: red;
   font-size: 14px;
@@ -156,4 +124,9 @@
 .success-msg {
   color: blue;
   font-size: 14px;
+}
+
+.agree-terms .check-box {
+  margin-right: 5px;
+  bottom: 68px;
 }
