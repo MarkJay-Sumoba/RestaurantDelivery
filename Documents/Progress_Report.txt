@@ -83,6 +83,13 @@ To be reviewed
 5. login.php added
 - In progress
 
+2023-10-23
+1. menuItems.php added
+- In progress
+
+2. fsd10_victor database updated
+- menu_items table added (dish_id, dish_name, dish_description, dish_price, category, images)
+
 2023-10-24
 1. login.php
 - validation and sanitization for email and password
@@ -91,11 +98,7 @@ To be reviewed
 2. index.php
 - login button added when not in session
 - profile button added when in sesssion
-=======
-2023-10-23
-1. menuItems.php added
-- In progress
 
-2. fsd10_victor database updated
-- menu_items table added (dish_id, dish_name, dish_description, dish_price, category, images)
+3. Trello updated
+
 
