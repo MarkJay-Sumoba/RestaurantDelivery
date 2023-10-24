@@ -50,7 +50,7 @@ To be reviewed
 2. index.php added
 
 3. fsd10_victor database created from phpmyadmin
-- tblgallery table added
+- tblgallery table added (id, file_path, img_name)
 - fsduser User added
 
 4. Initial Workflow sent
@@ -62,7 +62,7 @@ To be reviewed
 
 2023-10-19
 1. fsd10_victor database updated
-- users table added
+- users table added (id, email, password)
 
 2. 1. Trello updated
 - New Task added for development phase.
@@ -91,5 +91,11 @@ To be reviewed
 2. index.php
 - login button added when not in session
 - profile button added when in sesssion
+=======
+2023-10-23
+1. menuItems.php added
+- In progress
 
+2. fsd10_victor database updated
+- menu_items table added (dish_id, dish_name, dish_description, dish_price, category, images)
 
