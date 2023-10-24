@@ -1,17 +1,31 @@
 <?php
-// Database configuration
-$servername = "your_database_server";
-$username = "your_database_username";
-$password = "your_database_password";
-$dbname = "your_database_name";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+// variable
+$dbType = "mysql"; // type of database to connect to
+$dbServer = "localhost"; // host name of my server
+$dbName = "restaurantdelivery"; // name of my database
+$dbPort = "3304"; // port for database server (check MAMP), ($dbPort = "8889"; on my MAMP)
+$dbCharset = "utf8"; // charset encoding for database
+$dbUsername = "restaurantdeliveryuser"; // user with access to db
+$dbPassword ="myDBpw"; // $dbUsername password
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+/*// Create connection
+$db = new PDO($dbDSN, $dbUsername, $dbPassword);*/
+
+// connection string (data source name)
+$dbDSN = "{$dbType}:host={$dbServer};dbname={$dbName};port={$dbPort};charset={$dbCharset}";
+
+// open database connection
+try{
+    $db = new PDO($dbDSN, $dbUsername, $dbPassword);
+      // if the connection is successful
+      echo "Connected to the database successfully.";
+    }catch (PDOException $err){
+      echo "Connect failed: " . $err->getMessage();
+    }
+
+// connection string (data source name)
+$dbDSN = "{$dbType}:host={$dbServer};dbname={$dbName};port={$dbPort};charset={$dbCharset}";
 
 // Function to sanitize and validate input
 function sanitizeInput($input) {
@@ -34,8 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Close the database connection
-$conn->close();
 ?>
 
 <!-- HTML code remains unchanged -->
