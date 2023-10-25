@@ -22,11 +22,27 @@
           <li class="nav-item"><a class="nav-link mx-3 text-white" href="#contact-us">Contact Us</a></li>
         </ul>
 
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-              <a class="nav-link login-window text-white mx-3" href="./Login-Register.php"><i class="bi bi-person-circle mx-1 text-white"></i>Login</a>
-          </li>
-      </ul>
+        <?php
+        session_start();
+// Check if the user is logged in (you can change this condition as needed)
+if (isset($_SESSION["user_id"])) {
+    echo 
+  '<div class="dropdown navbar-nav ms-auto">
+    <button class="dropbtn mx-4">Profile</button>
+    <div class="dropdown-content">
+        <a href="profile.php">My Profile</a>
+        <a href="logout.php">Logout</a>
+    </div>
+  </div>';
+} else {
+    echo '<ul class="navbar-nav ms-auto">
+    <li class="nav-item">
+        <a class="nav-link login-window text-white mx-3" href="login.php"><i class="bi bi-person-circle mx-1 text-white"></i>Login</a>
+    </li>
+</ul>';
+
+}
+?>
       </div>
     </nav>
 
@@ -40,20 +56,7 @@
   </header>
 
   <section class="gallery">
-    <div class="container-fluid text-center container-2 mt-4 mb-4">
-      <h2>Gallery</h2>
-      <div class="menu-container text-center">
-        <img src="image/Chicken soup.jpg" alt="Chicken soup" class="img-fluid mb-3 mx-3">
-        <img src="image/pizza.jpg" alt="pizza" class="img-fluid mb-2 mx-2">
-        <img src="image/Sarmale.jpg" alt="Sarmale" class="img-fluid mb-2 mx-2">
-        <img src="image/seafood.jpg" alt="Surf n Turf" class="img-fluid mb-2 mx-2">
-        <img src="image/spaghetti.jpg" alt="Spaghetti" class="img-fluid mb-2 mx-2">
-        <img src="image/Steak.jpg" alt="Steak" class="img-fluid mb-2 mx-2">
-        <img src="./image/The pig's gift.jpg" alt="..." class="img-fluid mb-2 mx-2">
-        <img src="./image/Old Montreal.jpg" alt="..." class="img-fluid mb-2 mx-2">
-        <img src="./image/Papanasi-dolce-tipico-rumeno.jpg" alt="..." class="img-fluid mb-2 mx-2">
-      </div>
-    </div>
+    <?php include "gallery.php" ?>
   </section>
 
   <section class="aboutus">
