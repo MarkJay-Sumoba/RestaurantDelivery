@@ -1,22 +1,10 @@
 <?php
-// Include the database connection file (dbConnect.php)
+
 require_once 'dbConnect.php';
+require_once 'validation.php';
 
-// if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
-//   echo "<pre>";
-//   echo print_r($_POST);
-//   echo "</pre>";
-// }
+session_start(); 
 
-// Check if the user is already logged in. If yes, redirect to the index page.
-// if ($userIsLoggedIn) {
-//     header("location: index.php");
-//     die();
-// }
-
-session_start(); // Start a session
-
-// Check if the user is already logged in
 if (isset($_SESSION['user_id'])) {
     header('Location: index.php');
     exit();
@@ -25,67 +13,29 @@ if (isset($_SESSION['user_id'])) {
 $errorMessages = "";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
-    echo "<pre>";
-    echo print_r($_POST);
-    echo "</pre>";
+    $email = sanitizeEmail($_POST['register_email']);
 
-    $email = filter_var($_POST['login_email'], FILTER_SANITIZE_EMAIL);
-    echo $email;
+    if (validateEmail($email)){
 
-    $isEmailValid = filter_var($email, FILTER_VALIDATE_EMAIL);
-    if ($isEmailValid){
-    //   echo "Email is valid <br>";
-    // } else{
-    //   echo "Email is not valid <br>";
-    // }
-
-}
-
-    // Validate if 'txtLogin' (username) is empty
-    // if (empty($_POST['login_email'])) 
-    //     $errorMessages .= "Username is required <br>";
-    // }
-
-    // Validate if 'txtPass' (password) is empty
-    // if (empty($_POST['login_password'])) {
-    //     $errorMessages .= "Password is required <br>";
-    // }
-  
-
-    // If there are no validation errors, proceed to validate user and password combination
-    // if (empty($errorMessages)) {
-        // Fetch data from the database
         $sql = "SELECT * FROM users WHERE email = :email";
-        $query = $db->prepare($sql);
-        $query->execute(["email" => $_POST['login_email']]);
+        $check = $db->prepare($sql);
+        $check->execute(["email" => $email]);
         $data = $query->fetch();
 
-        // if ($data) {
-            // Username exists in the database
 
             if (password_verify($_POST['login_password'], $data['password'])) {
-                // The username and password match
 
-                // Start a session and set session variables to keep the user logged in
-                session_start();
                 $_SESSION['submit'] = true;
                 $_SESSION['user_id'] = $data['id'];
 
-                // You can also keep the user logged in using cookies if needed
-                // $cookie_expiration = time() + (60*60*24*7); // 1 week
-                // setcookie('cLoggedIn', true, $cookie_expiration);
-                // setcookie('cRealName', $data['real_name'], $cookie_expiration);
-
-                // Redirect to the index page
                 header("location: index.php");
                 die();
             }
-        // }
+        }
 
-        // Username does not exist in the database OR password does not match
         $errorMessages = "Invalid email/password";
     }
-// }
+  
 ?>
 
 <!DOCTYPE html>
@@ -126,13 +76,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
               <form class="input-group" id="login" action="" method="post">
                 <div class="input-box mb-3">
                   <span class="icon"><i class="bi bi-envelope"></i></span>
-                  <input type="email" class="input-field" name="login_email" required />
+                  <input type="email" class="input-field" name="login_email" value="<?php echo $email ?>" required />
                   <label for="login_email">Email</label><br>
                 </div>
                 
                 <div class="input-box mb-3">
                   <span class="icon"><i class="bi bi-lock"></i></span>
-                  <input type="password" class="input-field" name="login_password" required />
+                  <input type="password" class="input-field" name="login_password" value="<?php echo $pwd ?>" required />
                   <label for="login_password">Password</label>
                 </div>
 
@@ -140,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                   class="form-check remember-forgot mb-5 d-flex flex-column text-center"
                 >
                   <label for=""
-                    ><input type="checkbox" class="check-box mb-3" />Remember
+                    ><input type="checkbox" class="check-box mb-3" name="remember_me" />Remember
                     Password</label
                   >
                   <a href="#">Forgot Password?</a>

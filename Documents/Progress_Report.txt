@@ -104,14 +104,14 @@ To be reviewed
 2023-10-25
 1. validation.php added
 - functions to validate (Email,Password,Dob,phone,address)
--function to sanitization Email
--function to Sanitization Password and hash Password
+- function to sanitization Email
+- function to Sanitization Password and hash Password
 
 2. profile.php -> client.php change
 - Contact Info, Delete account, orders added
 - validation in progress for update Contact info 
 
-3. delete Account.php added
+3. deleteAccount.php added
 - in progress
 
 4. admin folder added
@@ -120,3 +120,7 @@ To be reviewed
 
 5. users table altered
 - name, dob, phone, address added
+
+2023-10-26
+1. deleteAccount.php
+- confirm password before deleting user added.

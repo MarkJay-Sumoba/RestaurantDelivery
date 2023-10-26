@@ -17,20 +17,19 @@
         <a class="navbar-logo px-3" href="index.php">Delivery<span>Chef</span></a>
 
         <ul class="navbar-nav ms-auto flex-row flex-wrap mx-center my-auto">
-          <li class="nav-item"><a class="nav-link mx-3 text-white" href="Menu.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link mx-3 text-white" href="Menu.php">Menu</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="#about-us">About Us</a></li>
           <li class="nav-item"><a class="nav-link mx-3 text-white" href="#contact-us">Contact Us</a></li>
         </ul>
 
         <?php
         session_start();
-// Check if the user is logged in (you can change this condition as needed)
 if (isset($_SESSION["user_id"])) {
     echo 
   '<div class="dropdown navbar-nav ms-auto">
     <button class="dropbtn mx-4">Profile</button>
     <div class="dropdown-content">
-        <a href="profile.php">My Profile</a>
+        <a href="client.php">My Profile</a>
         <a href="logout.php">Logout</a>
     </div>
   </div>';
@@ -51,7 +50,7 @@ if (isset($_SESSION["user_id"])) {
       <div class="container-1-item col-lg-12 text-center">
         <h1>Welcome to Delivery Chef</h1>
         <h2>Delicious Food Are Waiting for you!</h2>
-        <button type="button" class="btn btn-warning"><a href="./Menu.html">Order Online</a></button>
+        <button type="button" class="btn btn-warning"><a href="./Menu.php">Order Online</a></button>
       </div>
   </header>
 
@@ -194,6 +193,5 @@ if (isset($_SESSION["user_id"])) {
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="scripts/script.js"></script>
   </body>
 </html>
