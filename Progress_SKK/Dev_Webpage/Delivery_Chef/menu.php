@@ -1,106 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Order Online</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-    />
-    <link rel="stylesheet" type="text/css" href="css/menu.css" />
-  </head>
-  <body>
-    <div class="container-fluid">
-      <nav class="jumbotron">
-        <div
-          class="d-flex justify-content-between align-items-center py-4 bg-dark"
-        >
-          <p>
-            <a class="logo px-3" href="./Index.html"
-              >Delivery<span>Chef</span></a
-            >
-          </p>
+<?php 
+  require_once "dbConnect.php";
 
-          <form class="d-flex">
-            <input
-              class="form-control-lg me-2"
-              type="search"
-              placeholder="Search for menu"
-              aria-label="Search"
-            />
-            <button class="btn btn-warning" type="submit">
-              Search
-            </button>
-          </form>
+  $sql = "SELECT * FROM menu";
+  $data = [];
+  $currentNav = "recent"; 
 
-          <div class="shopping">
-            <img src="image/shopping.svg" />
-            <span class="quantity">0</span>
 
-          </div>
-        </div>
-      </nav>
+  if(isset($_GET['cat'])){
+    $sql .= " WHERE foodcat_id = :cat_id";
+    $data['cat_id'] = $_GET['cat'];
+    $currentNav = "C" . $_GET['cat'];
+    $pageTitle = " [ " . $allCategories[$_GET['cat']] . " ]"; 
+  }
+ 
+  $query = $db->prepare($sql);
+  $query->execute($data);
 
-            <!-- Filtering Menu with button -->
-            <div class="container-1-item col-lg-12 text-center my-4">
-              <ul
-                class="controls d-flex align-items-center justify-content-center flex-wrap p-1"
-              >
-                <li class="category-btn btn btn-warning mx-2 my-4" data-filter="Popular Dish">
-                  Popular Dish
-                </li>
-                <li class="category-btn btn btn-warning mx-2" data-filter="All">
-                  All
-                </li>
-                <li class="category-btn btn btn-warning mx-2" data-filter="Entree">
-                  Entree
-                </li>
-                <li class="category-btn btn btn-warning mx-2" data-filter="Vegetarian">
-                  Vegetarian
-                </li>
-                <li class="category-btn btn btn-warning mx-2" data-filter="Meat">
-                  Meat
-                </li>
-                <li class="category-btn btn btn-warning mx-2" data-filter="Seafood">
-                  Seafood
-                </li>
-                <li class="category-btn btn btn-warning mx-2" data-filter="Beverage">
-                  Beverage
-                </li>
-              </ul>
 
-              <h2>Popular Dish</h2>
-      <div class="list">
-        <!-- Menu items will be inserted from the app.js -->
-      </div>
-    </div>
-    <div class="card">
-      <h1>Order Summary</h1>
-      <ul class="listCard"></ul>
-      <div class="checkOut">
-        <div class="total">0</div>
-        <div class="closeShopping">Close</div>
-      </div>
-    </div>
+  include "includes/header_menu.php";
+  
+  ?>
 
-    <footer>
-      <div class="container-fluid bg-dark py-3">
-          <div class="col-12 text-center">
-            <p class="text-white">
-              ©2023 Delivery Chef. All rights reserved
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
+<h2>Popular Dish
+  <small><?=($pageTitle??""); ?></small>
+</h2>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="scripts/menu.js"></script>
-  </body>
-</html>
+<div class="row list">
+  <?php while ($row = $query->fetch()) {
+            $link = "menuItem.php?item=" . $row['menu_id'];
+          ?>
+  <div class="item">
+    <?php if ($row['image'] !=""){ ?>
+    <a href="<?=$link ; ?>">
+      <img class="img-responsive" src="<?=$row['image'];?>" alt="" />
+    </a>
+    <?php }?>
+    <h3 class="title">
+      <a href="<?=$link; ?>"><?=$row['dish_title']; ?></a>
+    </h3>
+    <h4 class="price">
+      <?= $row['price'] . " $"  ?>
+    </h4>
+
+    <button class="btn btn-primary" onclick="">Add to Cart</button>
+  </div>
+  <?php } ?>
+</div>
+<!-- <div class="list"> -->
+<!-- Menu items will be inserted from the app.js -->
+<!-- </div> -->
+</div>
+<div class="card">
+  <h1>Order Summary</h1>
+  <ul class="listCard"></ul>
+  <div class="checkOut">
+    <div class="total">0</div>
+    <div class="closeShopping">Close</div>
+  </div>
+</div>
+
+<?php
+    include "includes/footer.php";
+  ?>

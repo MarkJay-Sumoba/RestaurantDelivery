@@ -2,6 +2,19 @@
 
 
   /**
+   * Output the page not found
+   *
+   */
+  function menuPageNotFound(){
+    global $allCategories;  // gives access to $allCategories to prevent variable not found error
+    include "header_menu.php";
+    echo "Page not found";
+    include "footer.php";
+    die();
+  }
+
+
+  /**
    * validate if array value exists and is empty
    *
    * @param  [array] $array

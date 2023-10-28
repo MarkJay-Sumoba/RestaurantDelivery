@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3304
--- Generation Time: Oct 25, 2023 at 03:00 AM
+-- Generation Time: Oct 28, 2023 at 04:46 AM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -28,15 +28,15 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `food_cat` (
-  `FoodCat_ID` int(11) NOT NULL,
-  `FoodCat_DESC` varchar(100) NOT NULL
+  `foodcat_id` int(11) NOT NULL,
+  `foodcat_desc` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `food_cat`
 --
 
-INSERT INTO `food_cat` (`FoodCat_ID`, `FoodCat_DESC`) VALUES
+INSERT INTO `food_cat` (`foodcat_id`, `foodcat_desc`) VALUES
 (100, 'Entree'),
 (200, 'Vegetarian'),
 (300, 'Meat'),
@@ -51,7 +51,7 @@ INSERT INTO `food_cat` (`FoodCat_ID`, `FoodCat_DESC`) VALUES
 -- Indexes for table `food_cat`
 --
 ALTER TABLE `food_cat`
-  ADD PRIMARY KEY (`FoodCat_ID`);
+  ADD PRIMARY KEY (`foodcat_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

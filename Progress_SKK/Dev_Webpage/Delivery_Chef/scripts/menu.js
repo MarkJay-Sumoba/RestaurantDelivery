@@ -1,6 +1,6 @@
 const openShopping = document.querySelector(".shopping");
 const closeShopping = document.querySelector(".closeShopping");
-const list = document.querySelector(".list");
+// const list = document.querySelector(".list");
 const listCard = document.querySelector(".listCard");
 const body = document.querySelector("body");
 const total = document.querySelector(".total");

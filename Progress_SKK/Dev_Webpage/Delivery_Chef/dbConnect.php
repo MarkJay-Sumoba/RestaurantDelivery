@@ -25,4 +25,9 @@ try {
     // If there is an error in the connection
     echo "Connection failed: " . $error->getMessage();
 }
+
+$sql = "SELECT foodcat_id, foodcat_desc FROM food_cat ORDER BY foodcat_id ASC";
+$query = $db->query($sql);
+$allCategories = $query->fetchAll(PDO::FETCH_KEY_PAIR);
+
 ?>
