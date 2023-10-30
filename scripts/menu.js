@@ -52,7 +52,7 @@ function initApp() {
     newDiv.classList.add("item");
     //Order Item image > dish-name > price > qty
     newDiv.innerHTML = `
-            <img src="image/${value.image}">
+            <img src="../image/${value.image}">
             <div class="title">${value.name}</div>
             <div class="price">$${value.price.toLocaleString()}</div>
             <button onclick="addToCard(${key})">Add To Order</button>`;
@@ -80,7 +80,7 @@ function reloadCard() {
 
       //Order Item image > dish-name > price > qty
       newDiv.innerHTML = `
-                <div><img src="image/${value.image}"/></div>
+                <div><img src="../image/${value.image}"/></div>
                 <div>${value.name}</div>
                 <div>$${value.price.toLocaleString()}</div>
                 <div>

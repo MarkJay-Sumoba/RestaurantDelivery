@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
         if ($password) {
           $hashedPassword = hashPassword($_POST['register_password']);
 
-          $sql = "INSERT INTO users (email, password) VALUES (:email, :password)";
+          $sql = "INSERT INTO users (email, password, role) VALUES (:email, :password, 'user')";
           $register = $db->prepare($sql);
           $register->bindParam(':email', $email);
           $register->bindParam(':password', $hashedPassword);
@@ -81,7 +81,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
           <div class="col-md-6 col-lg-4">
             <div class="form-box p-4">
               <h2 class="text-white text-center mt-3">Sign Up</h2>
-              <form class="input-group" id="register" method="post" action="">
+
+              <form class="input-group text-center mx-auto py-5" id="register" method="post" action="">
                 <div class="input-box mb-3">
                   <span class="icon"><i class="bi bi-envelope"></i></span>
                   <input type="email" name="register_email" class="input-field" required />
@@ -94,18 +95,24 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                   <label for="register_password">Password</label>
                 </div>
 
-                <div class="form-check agree-terms mb-5 text-center">
-                  <input type="checkbox" name="agree_terms" class="check-box mx-2" />
-                  <span>I agree to the terms & conditions</span>
+                <div class="form-check agree-terms mb-3 text-center mx-auto">
+                  <input
+                    type="checkbox"
+                    name="agree_terms"
+                    class="check-box mb-3"
+                  />
+                  <label class="term-text text-white"
+                    >I agree to the terms & conditions</label
+                  >
                 </div>
 
-                <div class="login-link-box mt-2">
-                  <p>Already a member? <a href="login.php" class="login-link">Log In</a></p>
+                <div class="register-login-link-box my-3 mx-auto">
+                  <p class="text-white">Already a member? <a href="login.php" class="login-link">Log In</a></p>
                 </div>
 
                 <button
                   type="submit" name="submit"
-                  class="submit-btn m-auto px-1 py-3 my-2"
+                  class="submit-btn m-auto py-3 btn btn-warning rounded-3"
                 >
                   Sign Up
                 </button>

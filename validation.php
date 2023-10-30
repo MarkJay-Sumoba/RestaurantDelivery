@@ -28,16 +28,29 @@ function hashPassword($password) {
 
 //validate username containing only letters
 function validateName($name) {
-  return preg_match('/^[A-Za-z]+$/', $username);
+  return preg_match('/^[A-Za-z]+$/', $name);
 }
 
-//validate DOB with (YYYY-MM-DD) format
-// function validateDOB($dob) {
-//   return (bool) strtotime($dob);
-// }
-
-function validatePhoneNum($phone) {
-  return preg_match('/^\d{10}/', $phone);
+function validatePhone($phone) {
+  $phone = preg_replace("/[^0-9]/", "", $phone);
+  
+  if (strlen($phone) >= 9) {
+      return true; 
+  }
+  return false; 
 }
+
+function validatePostalCode($zip) {
+
+  $postalCode = trim($zip);
+  $pattern = "/^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$/";
+  
+  if (preg_match($pattern, $postalCode)) {
+      return true; 
+  } else {
+      return false; 
+  }
+}
+
 
 ?>

@@ -9,7 +9,8 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="./css/user_account.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark navbar-expand-md>
@@ -17,7 +18,7 @@
         <a class="navbar-logo px-3" href="index.php">Delivery<span>Chef</span></a>
 
         <ul class="navbar-nav ms-auto flex-row flex-wrap mx-center my-auto">
-          <li class="nav-item"><a class="nav-link mx-3 text-white" href="Menu.php">Menu</a></li>
+          <li class="nav-item"><a class="nav-link mx-3 text-white" href="menu.php">Menu</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="#about-us">About Us</a></li>
           <li class="nav-item"><a class="nav-link mx-3 text-white" href="#contact-us">Contact Us</a></li>
         </ul>
@@ -26,10 +27,13 @@
         session_start();
 if (isset($_SESSION["user_id"])) {
     echo 
-  '<div class="dropdown navbar-nav ms-auto">
-    <button class="dropbtn mx-4">Profile</button>
+    '<div class="dropdown navbar-nav ms-auto">
+    <a class="dropbtn mx-4"><i class="bi bi-person-circle mx-1 text-white"></i>Profile</a>
     <div class="dropdown-content">
-        <a href="client.php">My Profile</a>
+        <a href="updateAccount.php">Edit Profile</a>
+        <a href="updatePassword.php">Change Password</a>
+        <a href="deleteAccount.php">Delete Account</a>
+        <a href="">Order History</a>
         <a href="logout.php">Logout</a>
     </div>
   </div>';
@@ -181,17 +185,4 @@ if (isset($_SESSION["user_id"])) {
     </div>
   </section>
 
-    <footer>
-      <div class="container-fluid bg-dark py-3">
-          <div class="col-12 text-center">
-            <p class="text-white">
-              ©2023 Delivery Chef. All rights reserved
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
-</html>
+<?= 'footer.php' ?>

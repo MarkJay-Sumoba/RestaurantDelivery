@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Variable
 $dbType = "mysql"; // Type of database to connect to
 $dbServer = "localhost"; // Host name of my server
@@ -22,5 +23,14 @@ $db = new PDO($dbDSN, $dbUsername, $dbPassword);
 //     // If there is an error in the connection
 //     echo "Connection failed: " . $error->getMessage();
 // }
+
+$sql = "SELECT foodcat_id, foodcat_desc FROM food_cat ORDER BY foodcat_id ASC";
+$query = $db->query($sql);
+$allCategories = $query->fetchAll(PDO::FETCH_KEY_PAIR);
+
+$sqlUser = "SELECT id, email FROM users ORDER BY id ASC";
+$queryUser = $db->query($sqlUser);
+$allUsers = $queryUser->fetchAll(PDO::FETCH_KEY_PAIR);
+
 // ?>
 
