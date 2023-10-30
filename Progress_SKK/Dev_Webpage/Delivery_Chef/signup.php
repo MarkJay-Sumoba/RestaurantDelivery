@@ -1,71 +1,50 @@
 <?php
-      require_once 'dbConnect.php';
+require_once 'dbConnect.php';
+require_once 'validation.php';
 
-      $errorMessages = "";
-      $successMessages = "";
+$errorMessages = "";
+$successMessages = "";
 
-      if ( $_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])){
-        echo "<pre>";
-        print_r($_POST);
-        echo "</pre>";
+if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
 
-        if (!isset($_POST['agree_terms'])) {
-            $errorMessages = "You must agree to the terms & conditions.";
-        } else {
+  if (!isset($_POST['agree_terms'])) {
+    $errorMessages = "You must agree to the terms & conditions.";
+  } else {
+    $email = sanitizeEmail($_POST['register_email']);
+    $password = validatePassword($_POST['register_password']);
 
-        // data sanitization - built in php
-        $email = filter_var($_POST['register_email'], FILTER_SANITIZE_EMAIL);
-        // echo $email;
-      
-        // echo "<br>";
-        // data validation - built in php
-        $isEmailValid = filter_var($email, FILTER_VALIDATE_EMAIL);
-        // if($isEmailValid){
-        //   echo "Email is valid <br>";
-        // } else{
-        //   echo "Email is not valid <br>";
-        // }
+    if (validateEmail($email)) {
+      $sql = "SELECT COUNT(*) FROM users WHERE email = :email";
+      $check = $db->prepare($sql);
+      $check->bindParam(':email', $email);
+      $check->execute();
+      $count = $check->fetchColumn();
 
+      if ($count > 0) {
+        $errorMessages = "Email already exists.";
+      } else {
+        if ($password) {
+          $hashedPassword = hashPassword($_POST['register_password']);
 
-        if ($isEmailValid) {
-          // Check if the email already exists in the database
-          $sql = "SELECT COUNT(*) FROM users WHERE email = :email";
-          $email_dup = $db->prepare($sql);
-          $email_dup->bindParam(':email', $email);
-          $email_dup->execute();
-          $count = $email_dup->fetchColumn();
-  
-          if ($count > 0) {
-              $errorMessages = "Email already exists."; 
-              
+          $sql = "INSERT INTO users (email, password, role) VALUES (:email, :password, 'user')";
+          $register = $db->prepare($sql);
+          $register->bindParam(':email', $email);
+          $register->bindParam(':password', $hashedPassword);
+
+          if ($register->execute()) {
+            header("Location: login.php");
+            exit(); 
           } else {
-             // Data sanitization for password 
-             $password = filter_var($_POST['register_password'], FILTER_SANITIZE_STRING);
-              
-             if (strlen($password) >= 5) {
-              $password = password_hash($_POST['register_password'], PASSWORD_DEFAULT);
-
-              // Insert user data into the "users" table
-              $sql = "INSERT INTO users (email, password) VALUES (:email, :password)";
-              $register = $db->prepare($sql);
-              $register->bindParam(':email', $email);
-              $register->bindParam(':password', $password);
-  
-              if ($register->execute()) {
-                // Redirect to the login page after successful registration
-                header("Location: login.php");
-                exit(); // Ensure that no further code is executed
-            } else {
-                $errorMessages = "Unable to register the user.";
-            }
+            $errorMessages = "Unable to register the user.";
+          }
         } else {
-            $errorMessages = "Password must be at least 5 characters long.";
+          $errorMessages = "Password must be at least 5 characters long.";
         }
+      }
+    } else {
+      $errorMessages = "Email is not valid.";
     }
-} else {
-    $errorMessages = "Email is not valid.";
-}
-}
+  }
 }
 ?>
 
@@ -102,7 +81,8 @@
           <div class="col-md-6 col-lg-4">
             <div class="form-box p-4">
               <h2 class="text-white text-center mt-3">Sign Up</h2>
-              <form class="input-group" id="register" method="post" action="">
+
+              <form class="input-group text-center mx-auto py-5" id="register" method="post" action="">
                 <div class="input-box mb-3">
                   <span class="icon"><i class="bi bi-envelope"></i></span>
                   <input type="email" name="register_email" class="input-field" required />
@@ -115,18 +95,24 @@
                   <label for="register_password">Password</label>
                 </div>
 
-                <div class="form-check agree-terms mb-5 text-center">
-                  <input type="checkbox" name="agree_terms" class="check-box mx-2" />
-                  <span>I agree to the terms & conditions</span>
+                <div class="form-check agree-terms mb-3 text-center mx-auto">
+                  <input
+                    type="checkbox"
+                    name="agree_terms"
+                    class="check-box mb-3"
+                  />
+                  <label class="term-text text-white"
+                    >I agree to the terms & conditions</label
+                  >
                 </div>
 
-                <div class="login-link-box mt-2">
-                  <p>Already a member? <a href="login.php" class="login-link">Log In</a></p>
+                <div class="register-login-link-box my-3 mx-auto">
+                  <p class="text-white">Already a member? <a href="login.php" class="login-link">Log In</a></p>
                 </div>
 
                 <button
                   type="submit" name="submit"
-                  class="submit-btn m-auto px-1 py-3 my-2"
+                  class="submit-btn m-auto py-3 btn btn-warning rounded-3"
                 >
                   Sign Up
                 </button>

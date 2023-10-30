@@ -26,6 +26,9 @@
         </form>
 
         <p>
+          <a class="logo px-3" href="dashboard.php">Dashboard</a>
+        </p>
+        <p>
           <a class="logo px-3" href="admin_menu.php">Edit Menu</a>
         </p>
 
@@ -62,3 +65,7 @@
           <a href="menu.php?cat=500">Beverage</a>
         </li>
       </ul>
+
+      <h2><?=$mainTitle; ?>
+        <small><?=($pageTitle??""); ?></small>
+      </h2>

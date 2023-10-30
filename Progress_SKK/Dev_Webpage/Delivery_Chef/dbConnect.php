@@ -1,6 +1,10 @@
 <?php
 
 require "includes/functions.php";
+require "validation.php";
+
+// open session
+session_start();
 
 // Variable
 $dbType = "mysql"; // Type of database to connect to
@@ -13,21 +17,14 @@ $dbPassword = "myDBpw"; // $dbUsername password
 
 // Connection string (data source name)
 $dbDSN = "{$dbType}:host={$dbServer};dbname={$dbName};port={$dbPort};charset={$dbCharset}";
-// $db = new PDO($dbDSN, $dbUsername, $dbPassword);
-
-try {
-    // Open database connection
-    $db = new PDO($dbDSN, $dbUsername, $dbPassword);
-    
-    // If the connection is successful
-    echo "Connected to the database successfully.";
-} catch (PDOException $error) {
-    // If there is an error in the connection
-    echo "Connection failed: " . $error->getMessage();
-}
+$db = new PDO($dbDSN, $dbUsername, $dbPassword);
 
 $sql = "SELECT foodcat_id, foodcat_desc FROM food_cat ORDER BY foodcat_id ASC";
 $query = $db->query($sql);
 $allCategories = $query->fetchAll(PDO::FETCH_KEY_PAIR);
 
-?>
+$sqlUser = "SELECT id, email FROM users ORDER BY id ASC";
+$queryUser = $db->query($sqlUser);
+$allUsers = $queryUser->fetchAll(PDO::FETCH_KEY_PAIR);
+
+// ?>

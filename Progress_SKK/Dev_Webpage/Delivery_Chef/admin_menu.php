@@ -1,9 +1,12 @@
 <?php 
 require "dbConnect.php";
 // var_dump($_SERVER);
-  // print_r($_FILES);
-  // echo "<br> == POST == <br>";
-  // print_r($_POST);
+echo "<br> == GET == <br>";
+  print_r($_GET);
+  echo "<br> == POST == <br>";
+  print_r($_POST);
+  echo "<br> == FILES == <br> <pr>";
+  print_r($_FILES);
 
 // variables
 $errorMessages = "";
@@ -58,6 +61,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $selCategory = $_POST['selCategory'];
   }
 
+  $fileImage = $_POST['oldImage'] ?? ""; // tracking existing image during update
+  $itemId = $_POST['itemId'] ?? ""; // track item id if it exists
+
   // If error message is empty then save to db
   if($errorMessages == ""){
     // save and upload the file (if applicable)
@@ -85,19 +91,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       "txtDesc"=>$txtDesc
     ];
     
+   
     if($itemId == ""){
       // no item id was found = add new row to the database
       $sql = "INSERT INTO menu (dish_title, foodcat_id, price, image, description ) 
       VALUES (:dishTitle, :selCategory, :foodPrice, :fileImage, :txtDesc)";
     }else {
-     // item id was found = update xisting row
-      $sql = "UPDATE portfolio SET title = :title , caption = :caption, body = :body, 
-        category_id = :cat_id, image = :image, update_time = :utime WHERE  portfolio_id= :pid";
+     // item id was found = update existing row
+      $sql = "UPDATE menu SET dish_title = :dishTitle , foodcat_id = :selCategory, price = :foodPrice, 
+         image = :fileImage, description = :txtDesc WHERE  menu_id= :id";
      
-      $data['pid'] = $itemId;    
+      $data['id'] = $itemId;    
      // add id to $data
     }
-    
+
       $query = $db->prepare($sql);
       $query->execute($data);
   
@@ -120,6 +127,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   <div class="container-fluid admin-menu-container">
     <div class="row justify-content-center ">
       <form class="col-sm-6 col-sm-offset-3" method="POST" enctype="multipart/form-data" action="admin_menu.php">
+        <input type="hidden" name="itemId" value=<?= $itemId; ?>>
+        <input type="hidden" name="oldImage" value=<?= $fileImage; ?>>
+
         <div class="form-group mb-3">
           <label for="dish">Dish Title :</label>
           <input type="text" class="form-control" id="dish" name="dishTitle" value="<?=$dishTitle; ?>" required>

@@ -14,7 +14,7 @@ if(!$result){  // nothing found in the DB
   menuPageNotFound();
 }
 
-  
+$mainTitle = "For your choice";  
 include "includes/header_menu.php";
 ?>
 
@@ -31,7 +31,7 @@ include "includes/header_menu.php";
       </span><br />
 
       <a href="admin_menu.php?item=<?=$result['menu_id']; ?>"> Edit Item</a> -
-      <a href="delete.php?item=<?=$result['menu_id']; ?>"> Delete </a>
+      <a href="deleteMenu.php?item=<?=$result['menu_id']; ?>"> Delete </a>
 
       <p><strong><?=$allCategories[$result['foodcat_id']]; ?> </strong></p>
       <p>

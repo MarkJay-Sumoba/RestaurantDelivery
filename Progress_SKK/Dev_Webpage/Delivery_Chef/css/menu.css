@@ -85,7 +85,8 @@ nav .shopping span {
   color: #fff;
   width: 100%;
   padding: 10px;
-  align-self: end;
+  position: relative;
+  bottom: 0;
 }
 
 .card {
@@ -155,8 +156,3 @@ nav .shopping span {
 .listCard .count {
   margin: 0 10px;
 }
-
-/* .menu-item {
-  margin-bottom: 25px;
-  width: 300px;
-} */

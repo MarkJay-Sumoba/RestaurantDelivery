@@ -11,19 +11,17 @@
     $data['cat_id'] = $_GET['cat'];
     $currentNav = "C" . $_GET['cat'];
     $pageTitle = " [ " . $allCategories[$_GET['cat']] . " ]"; 
+  }else {
+    $sql .= " ORDER BY foodcat_id ASC";
   }
  
   $query = $db->prepare($sql);
   $query->execute($data);
 
-
+  $mainTitle = "Popular Dish";
   include "includes/header_menu.php";
   
   ?>
-
-<h2>Popular Dish
-  <small><?=($pageTitle??""); ?></small>
-</h2>
 
 <div class="row list">
   <?php while ($row = $query->fetch()) {
@@ -42,7 +40,7 @@
       <?= $row['price'] . " $"  ?>
     </h4>
 
-    <button class="btn btn-primary" onclick="">Add to Cart</button>
+    <button class="btn btn-primary add-btn" onclick="">Add to Cart</button>
   </div>
   <?php } ?>
 </div>
