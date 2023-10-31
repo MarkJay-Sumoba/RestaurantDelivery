@@ -1,0 +1,34 @@
+>> Scrum Meeting - [Oct. 31 / 2023]
+
+[ Mark ]
+1. Worked on
+(1) Dashboard.php updated
+2. Todo
+(1) create admin_userCount.php
+(2) create admin_menuCount.php
+(3) Insert new users role employee in the user table
+>  update admin_Employee.php similar to admin_user
+>  Disable role == user entry in dashboard.php
+3. Issues 
+> finding right design (employee section)
+> logic for disabling entry in dashboard
+
+===================================================
+[Claudiu]
+1. Worked on
+(1) Contactus.php
+2. Todo 
+(1) Keep working on - Contactus.php
+3. Issues
+> DB connection is not working 
+
+====================================================
+[SangKyu]
+1. Worked on
+(1) Menu Category
+> to make it work according to login status
+2. Todo
+(1) Admin- interface (delete function)
+(2) Menu - interface (delete function)
+3. Issues
+> there is no confirmation process for deleting data
