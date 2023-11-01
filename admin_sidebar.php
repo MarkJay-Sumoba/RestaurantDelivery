@@ -26,11 +26,11 @@
     </li>
 
     <li>
-      <a href="admin_employees.php" class="text-decoration-none py-2 d-block"><i class="bi bi-person"></i>Employees</a>
+      <a href="" class="text-decoration-none py-2 d-block"><i class="bi bi-envelope"></i>Messages</a>
     </li>
 
     <li>
-      <a href="index.php" class="text-decoration-none py-2 d-block logout mb-5"><i
+      <a href="logout.php" class="text-decoration-none py-2 d-block logout mb-5"><i
           class="bi bi-box-arrow-right"></i>Logout</a>
     </li>
   </ul>

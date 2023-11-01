@@ -100,6 +100,31 @@
   width: 60%;
 }
 
+/* @media screen and (min-width: 800px) {
+  .container-1 {
+    height: 90vh;
+  }
+
+  .image-container img {
+    width: 60%;
+  }
+
+  .image-container .img-1 {
+    width: 40%;
+  }
+
+  .aboutus-container p {
+    color: aliceblue;
+    margin: 20px;
+    font-size: 12px;
+  }
+
+  .contact-container .contact-item {
+    position: relative;
+    width: 70%;
+  }
+} */
+
 /* Contact Us */
 .contact-container .contact-item {
   position: relative;
@@ -241,6 +266,7 @@ hr.h-color {
 }
 
 /* Edit Profile */
+
 .profile-container {
   width: 40%;
   margin: 0 auto;

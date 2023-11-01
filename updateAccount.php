@@ -119,11 +119,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
           <label>City</label>
           <input type="text" class="form-control" name="city" value="<?=$result['city'];?>">
         </div>
-        <div class="form-group col-md-2">
+        <div class="form-group col-md-3">
           <label>Province</label>
           <input type="text" class="form-control" name="province" value="<?=$result['province'];?>">
         </div>
-        <div class="form-group col-md-2">
+        <div class="form-group col-md-3">
           <label>Postal Code</label>
           <input type="text" class="form-control" name="zip" value="<?=$result['zip'];?>">
         </div>

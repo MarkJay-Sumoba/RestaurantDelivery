@@ -31,20 +31,25 @@
           <div class="card-container p-3 mt-2">
             <h3 class="main-title">Data</h3>
             <div class="card-box p-2 rounded-1 d-flex flex-wrap gap-2">
+
+            <!-- Total Users Registered -->
               <div class="cardcontent-box d-flex justify-content-between align-items-center p-3">
                 <div class="card-title">
                   <span>Total Users:</span>
-                  <span class="user-count d-flex flex-columns">50</span>
+                  <?php include 'admin_userCount.php'?>
+                  <span class="user-count d-flex flex-columns"><?=$userCount?></span>
                 </div>
                 <i class="bi bi-people-fill icon text-center p-1"></i>
                 </div>
 
+                <!-- Total Menu Registered -->
                 <div class="cardcontent-box d-flex justify-content-between align-items-center p-3">
                   <div class="card-title">
-                    <span>Total Orders:</span>
-                    <span class="user-count d-flex flex-columns">100</span>
+                    <span>Menu Items:</span>
+                    <?php include 'admin_menuCount.php'?>
+                    <span class="user-count d-flex flex-columns"><?=$menuCount?></span>
                   </div>
-                  <i class="bi bi-people-fill icon text-center p-1"></i>
+                  <i class="bi bi-book icon text-center p-1"></i>
                   </div>
 
                   <div class="cardcontent-box d-flex justify-content-between align-items-center p-3">

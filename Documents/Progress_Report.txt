@@ -154,3 +154,5 @@ To be reviewed
 
 5. CRUD in users section is done.
 
+6. Trello updated
+

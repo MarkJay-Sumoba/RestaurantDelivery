@@ -26,7 +26,41 @@
 
 <body>
   <div class="main-container d-flex">
-      <?= include 'admin_sidebar.php'?>
+    <div class="sidebar p-4 text-center" id="side_nav">
+      <div class="side-header px-2 pt-3 pb-4">
+        <h1 class="fs-4">Delivery<span>Chef</span></h1>
+      </div>
+
+      <ul class="side-menu list-unstyled px-2">
+        <li class="">
+          <a href="dashboard.php" class="text-decoration-none py-2 d-block"><i
+              class="bi bi-speedometer"></i></i>Dashboard</a>
+        </li>
+
+        <li>
+          <a href="admin_menu_dashbd.php" class="text-decoration-none py-2 d-block"><i class="bi bi-book"></i>Menu</a>
+        </li>
+
+        <li>
+          <a href="admin_orders.php" class="text-decoration-none py-2 d-block"><i class="bi bi-cart"></i>Orders</a>
+        </li>
+
+        <li>
+          <a href="admin_users.php" class="text-decoration-none py-2 d-block"><i class="bi bi-person"></i>Users</a>
+        </li>
+
+        <li>
+          <a href="admin_employees.php" class="text-decoration-none py-2 d-block"><i
+              class="bi bi-person"></i>Employees</a>
+        </li>
+
+        <li>
+          <a href="index.php" class="text-decoration-none py-2 d-block logout mb-5"><i
+              class="bi bi-box-arrow-right"></i>Logout</a>
+        </li>
+      </ul>
+
+    </div>
     <div class="container-fluid content-container">
       <div class="header-box">
         <div class="header-title p-3">
@@ -61,7 +95,8 @@
                 <td><?=$row['price'] . "$"; ?></td>
                 <td><button class="update-delete p-2 mx-1 rounded-3"><a
                       href="admin_menu.php?item=<?=$row['menu_id']; ?> ">Edit</a></button><button
-                    class="update-delete p-2 mx-1 rounded-3"><a href="">Delete</a></button></td>
+                    class="update-delete p-2 mx-1 rounded-3"><a
+                      href="deleteMenu.php?item=<?=$row['menu_id']; ?>">Delete</a></button></td>
               </tr>
               <?php } ?>
 

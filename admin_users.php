@@ -2,7 +2,7 @@
 require_once 'dbConnect.php';
 
 // retrieve User info existing
-$sql = "SELECT * FROM users WHERE role = 'user' ORDER BY role ASC";
+$sql = "SELECT * FROM users ORDER BY role ASC";
 $query = $db->prepare($sql);
 $query->execute();
 ?>
