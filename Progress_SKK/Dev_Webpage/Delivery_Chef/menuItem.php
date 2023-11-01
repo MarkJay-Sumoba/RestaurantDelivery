@@ -29,10 +29,10 @@ include "includes/header_menu.php";
     <div class="col-sm 4">
       <h1><?= $result['dish_title'] ; ?></h1>
       </span><br />
-
+      <?php if(isset($_SESSION["user_id"]) && $_SESSION["role"] == "admin") { ?>
       <a href="admin_menu.php?item=<?=$result['menu_id']; ?>"> Edit Item</a> -
       <a href="deleteMenu.php?item=<?=$result['menu_id']; ?>"> Delete </a>
-
+      <?php } ?>
       <p><strong><?=$allCategories[$result['foodcat_id']]; ?> </strong></p>
       <p>
         <?= nl2br($result['description']); ?>

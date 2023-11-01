@@ -21,9 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
             $_SESSION['user_id'] = $data['id'];
 
             if ($data['role'] == 'user') {
+                $_SESSION['role'] = 'user';
                 header("Location: index.php");
                 exit();
             } elseif ($data['role'] == 'admin') {
+                $_SESSION['role'] = 'admin';
                 header("Location: dashboard.php");
                 exit();
             }

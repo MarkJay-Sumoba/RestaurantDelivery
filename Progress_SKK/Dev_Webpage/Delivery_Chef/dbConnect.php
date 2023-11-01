@@ -1,10 +1,11 @@
 <?php
 
-require "includes/functions.php";
-require "validation.php";
+require_once "includes/functions.php";
+require_once "validation.php";
 
 // open session
 session_start();
+
 
 // Variable
 $dbType = "mysql"; // Type of database to connect to

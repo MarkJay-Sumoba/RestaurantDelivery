@@ -1,0 +1,87 @@
+[ To Do - Progress ] (10/17)
+1. Database analysis 
+(1) Determine the purpose of Database : Done
+(2) Determine the Entities (Table) necessary : Done
+(3) Determine the Attribute (fields) : Done
+
+2. Data Dictionary
+(1) Initial version : Done 
+ > To be review
+
+3. ERD 
+(1) Initial version : Done
+> Updated 
+> To be reivew
+
+4. Normalization 
+(1) 3NF :  Done
+> To be review
+
+5. Initial Workflow - Documentation
+(1) DB & ERD part : Done
+> To be review
+
+=====================
+(10/18) 
+1. Development - WebPage
+1-1. MainPage - Gallery part
+(1) created DB (entity, attributes necessary)
+> created 'fsd10_victor' database
+> added table for gallery
+(2) initiate gallery.php (collaborated with Mark)
+1-2. index.php 
+
+(10/19)
+1. DB table update
+> create table - users
+
+(~10/22)
+1. Development - WebPage
+1-1. Registration
+(1) added Sanitize and Validate functions
+(2) added error-handling (for checking existing DB)
+
+===============================
+(~10/29)
+1. DB update
+> created table 'menu'
+> created table 'food_cat'
+> revised table 'users'
+
+2. Development - WebPage
+2-1. Admin Menu page 
+> developed CRUD functions 
+
+2-2. Menu page for the service
+> connection with DB
+> connection with other pages
+
+2-3. Menu Item page for the service
+> connection with DB
+> connection with Menu main page
+
+2-4. User Profile edit page (Collaborated with Mark)
+> connection with DB
+
+2-5. DashBoard - Menu category page 
+> connection with DB  
+> Edit function
+ 
+
+===============================
+(~10/31)
+1. Development - WebPage
+1-1. Menu Page
+> handles contents visibility according to the account condition (Admin/ Users)
+
+1-2. Menu Item Pages
+> handles contents visibility according to the account condition (Admin/ Users)
+> handles delete process works with confirmation step
+
+1-3. Dashboard - Menu category
+> handles delete process works with confirmation step
+
+1-4. Search Functionality (Collaborated with Mark)
+
+
+

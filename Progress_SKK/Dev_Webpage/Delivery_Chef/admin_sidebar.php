@@ -7,7 +7,7 @@
     <li class="">
       <a href="dashboard.php" class="text-decoration-none py-2 d-block"><i
           class="bi bi-speedometer"></i></i>Dashboard</a>
-
+    
 
     <li>
       <a href="admin_menu_dashbd.php" class="text-decoration-none py-2 d-block"><i class="bi bi-book"></i>Menu</a>
@@ -18,8 +18,7 @@
     </li>
 
     <li>
-      <a href="admin_orders.php" class="text-decoration-none py-2 d-block">
-    </li><i class="bi bi-truck"></i>Delivery</a>
+      <a href="admin_orders.php" class="text-decoration-none py-2 d-block"></li><i class="bi bi-truck"></i>Delivery</a>
     </li>
 
     <li>
@@ -27,11 +26,11 @@
     </li>
 
     <li>
-      <a href="admin_employees.php" class="text-decoration-none py-2 d-block"><i class="bi bi-person"></i>Employees</a>
+      <a href="" class="text-decoration-none py-2 d-block"><i class="bi bi-envelope"></i>Messages</a>
     </li>
 
     <li>
-      <a href="index.php" class="text-decoration-none py-2 d-block logout mb-5"><i
+      <a href="logout.php" class="text-decoration-none py-2 d-block logout mb-5"><i
           class="bi bi-box-arrow-right"></i>Logout</a>
     </li>
   </ul>

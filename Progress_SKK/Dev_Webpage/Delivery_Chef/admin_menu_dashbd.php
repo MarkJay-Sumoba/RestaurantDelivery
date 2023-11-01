@@ -95,7 +95,8 @@
                 <td><?=$row['price'] . "$"; ?></td>
                 <td><button class="update-delete p-2 mx-1 rounded-3"><a
                       href="admin_menu.php?item=<?=$row['menu_id']; ?> ">Edit</a></button><button
-                    class="update-delete p-2 mx-1 rounded-3"><a href="">Delete</a></button></td>
+                    class="update-delete p-2 mx-1 rounded-3"><a
+                      href="deleteMenu.php?item=<?=$row['menu_id']; ?>">Delete</a></button></td>
               </tr>
               <?php } ?>
 

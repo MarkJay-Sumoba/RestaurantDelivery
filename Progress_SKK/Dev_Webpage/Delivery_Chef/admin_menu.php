@@ -1,12 +1,5 @@
 <?php 
 require "dbConnect.php";
-// var_dump($_SERVER);
-echo "<br> == GET == <br>";
-  print_r($_GET);
-  echo "<br> == POST == <br>";
-  print_r($_POST);
-  echo "<br> == FILES == <br> <pr>";
-  print_r($_FILES);
 
 // variables
 $errorMessages = "";
@@ -161,14 +154,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             name="txtDesc"><?=$txtDesc; ?></textarea>
         </div>
 
-        <!-- <div class="form-group mb-3">
-          <label for="qty">Quantity :</label>
-          <input type="text" class="form-control" id="qty" name="qtyOrder">
-        </div>
-        <div class="form-group mb-3">
-          <label for="total">Total Price :</label>
-          <input type="text" class="form-control" id="total" name="totPrice">
-        </div> -->
         <div class="form-group mb-3">
           <button type="submit" class="btn btn-primary mb-3">Submit</button>
         </div>
