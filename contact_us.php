@@ -1,35 +1,14 @@
 <?php
+require "dbConnect.php";
 
-// variable
-$dbType = "mysql"; // type of database to connect to
-$dbServer = "localhost"; // host name of my server
-$dbName = "restaurantdelivery"; // name of my database
-$dbPort = "3304"; // port for database server (check MAMP), ($dbPort = "8889"; on my MAMP)
-$dbCharset = "utf8"; // charset encoding for database
-$dbUsername = "restaurantdeliveryuser"; // user with access to db
-$dbPassword ="myDBpw"; // $dbUsername password
-
-/*// Create connection
-$db = new PDO($dbDSN, $dbUsername, $dbPassword);*/
-
-// connection string (data source name)
-$dbDSN = "{$dbType}:host={$dbServer};dbname={$dbName};port={$dbPort};charset={$dbCharset}";
-
-// open database connection
-try{
-    $db = new PDO($dbDSN, $dbUsername, $dbPassword);
-      // if the connection is successful
-      echo "Connected to the database successfully.";
-    }catch (PDOException $err){
-      echo "Connect failed: " . $err->getMessage();
-    }
-
-// connection string (data source name)
-$dbDSN = "{$dbType}:host={$dbServer};dbname={$dbName};port={$dbPort};charset={$dbCharset}";
-
-// Function to sanitize and validate input
 function sanitizeInput($input) {
-    return htmlspecialchars(trim($input));
+    // Remove leading and trailing whitespaces
+    $input = trim($input);
+    // Remove HTML and PHP tags
+    $input = strip_tags($input);
+    // Convert special characters to HTML entities
+    $input = htmlspecialchars($input, ENT_QUOTES, 'UTF-8');
+    return $input;
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -39,18 +18,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = sanitizeInput($_POST["message"]);
 
     // Insert data into the database
-    $sql = "INSERT INTO ContactUs (FullName, UserEmail, Message) VALUES ('$fullName', '$userEmail', '$message')";
+    $sql = "INSERT INTO ContactUs (FullName, UserEmail, Message) VALUES (:fullName, :userEmail, :message)";
+    $data = [
+        'fullName' => $fullName,
+        'userEmail' => $userEmail,
+        'message' => $message,
+    ];
 
-    if ($conn->query($sql) === TRUE) {
+    $query = $db->prepare($sql);
+    if ($query->execute($data)) {
         echo "Message sent successfully!";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: " . $sql . "<br>" . $query->errorInfo()[2];
     }
 }
 
 ?>
-
 <!-- HTML code remains unchanged -->
+
 
 <section class="contactus">
     <!-- ... Existing HTML code ... -->
