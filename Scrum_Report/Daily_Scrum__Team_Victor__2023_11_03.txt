@@ -1,0 +1,184 @@
+>> Scrum Meeting - [Nov. 03 / 2023]
+
+[Mark] --
+1. Worked on
+> adding cart : In progress
+> Developing checkout : in progress
+
+2. Todo
+> Adding Cart functionality
+> developing Checkout PHP (finalizing)
+> developing Order 
+> clean up codes 
+
+3. Issues
+> Develop logic for cart and checkout
+> Debuggin Check out button functionality
+
+[Claudiu] --
+1. Worked on 
+> Contactus.php : in progress
+> Documentation
+
+2. Todo
+> Documentation : in progress
+
+3. Issues
+> DB communication failed 
+
+[SangKyu] --
+1. Worked on
+1-1. Dashboard
+(1) update DB table  : Done
+> Employee list : emp_delivery / service-sts
+> Delivery Schedule : orders / sched_order
+ 
+1-2. Dashboard
+(1) Develop interface
+> Delivery Schedule : Done
+> Order list : Done
+> Schedule : Done
+
+(2) Functionality
+> Employee list : Delete  (In Progress) 
+
+2. Todo
+2-1. Dashboard
+(1) Develop interface
+> Employee login
+
+(2) Functionality
+> Employee list : Delete -> login step necessary 
+
+2-2.  Menu Cart 
+(1) [Add to cart] button -> login step necessary
+(2) header_menu.php -> refresh to update the info in real time
+
+3. Issues
+-  Changes on DB design
+----------------------------------------------------------------------------------
+
+
+
+>> Scrum Meeting - [Nov. 02 / 2023]
+
+[Mark] --
+1. Worked on
+> adding cart : In progress
+> Developing checkout : in progress
+
+2. Todo
+> Adding Cart functionality
+> developing Checkout PHP 
+
+3. Issues
+> Develop logic for cart and checkout
+
+[Claudiu] --
+1. Worked on 
+> Contactus.php : in progress
+> Documentation
+
+2. Todo
+> Documentation 
+
+3. Issues
+> DB communication failed 
+
+[SangKyu] --
+1. Worked on
+1-1. Dashboard
+(1) Create DB table : Done
+> Employee list : emp_delivery / service-sts
+> Delivery Schedule : orders / sched_order
+ 
+(2) Develop interface  
+> Employee list : Add/ Update 
+
+2. Todo
+2-1. Dashboard
+(1) Develop interface
+> Delivery Schedule
+> Order list
+
+(2) Functionality
+> Employee list : Delete 
+
+3. Issues
+-  Changes on DB design
+----------------------------------------------------------------------------------
+
+>> Scrum Meeting - [Nov. 01 / 2023]
+
+[Mark]
+1. Worked on
+> Search funcitonality : Done
+> adding cart : In progress
+> Developing checkout : in progress
+
+2. Todo
+> Adding Cart functionality
+> developing Checkout PHP 
+
+3. Issues
+> Changes on Emloyee session design
+
+[Claudiu]
+1. Worked on
+> Contactus.php : in progress
+
+2. Todo
+> Documentation 
+
+3. Issues
+> DB communication failed 
+
+[SangKyu]
+1. Worked on
+1-1. Menu Category
+> to make it work according to login status : Done
+> added the confirmation process for deleting data on the Dashboard and Menu category pages : Done
+> engaged with the development of the Search functionlaity : Done
+
+2. Todo
+2-1. Employee Interface
+(1) create DB table
+(2) develop interface  
+
+3. Issues
+-  Changes on DB design
+----------------------------------------------------------------------------------
+>> Scrum Meeting - [Oct. 31 / 2023]
+
+[ Mark ]
+1. Worked on
+(1) Dashboard.php updated
+2. Todo
+(1) create admin_userCount.php
+(2) create admin_menuCount.php
+(3) Insert new users role employee in the user table
+>  update admin_Employee.php similar to admin_user
+>  Disable role == user entry in dashboard.php
+3. Issues 
+> finding right design (employee section)
+> logic for disabling entry in dashboard
+
+===================================================
+[Claudiu]
+1. Worked on
+(1) Contactus.php
+2. Todo 
+(1) Keep working on - Contactus.php
+3. Issues
+> DB connection is not working 
+
+====================================================
+[SangKyu]
+1. Worked on
+(1) Menu Category
+> to make it work according to login status
+2. Todo
+(1) Admin- interface (delete function)
+(2) Menu - interface (delete function)
+3. Issues
+> there is no confirmation process for deleting data
