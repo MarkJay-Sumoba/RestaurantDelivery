@@ -1,0 +1,170 @@
+Progress Report
+2023-10-13
+1. Github repo created
+new branch created for each team member
+
+2. Trello kanban board created to apoint task for each member
+
+3. Figma created for wireframe/design for website
+
+2023-10-15
+1.index.html added
+style.css added
+script.js added
+image downloaded
+
+2.Designing demo Homepage with login
+To be reviewed
+
+3.Menu page added
+Login in menu page not functional
+search bar not functional
+To be reviewed
+
+2023-10-16
+1. Figma updated (collaborated with Sangkyu)
+- register wireframe added
+- order wireframe added
+- online-order menu page updated
+
+2. Review on the ERD
+
+2023-10-17
+1. Menu Page updated 
+- order summary has been added
+- menu card added 
+- menu.js created
+- menu.css created
+- Color and Fonts updated
+
+2. Index Page updated
+- Color and Fonts updated
+- Text contents updated
+
+3. Text document for initial-workflow added.
+
+2023-10-18
+1. gallery.php added (collaboarated with SangKyu)
+- Completed
+
+2. index.php added
+
+3. fsd10_victor database created from phpmyadmin
+- tblgallery table added (id, file_path, img_name)
+- fsduser User added
+
+4. Initial Workflow sent
+- Figma screenshots
+- Initial-workflow 
+- ERD
+- Source Code Demo design
+
+
+2023-10-19
+1. fsd10_victor database updated
+- users table added (id, email, password)
+
+2. 1. Trello updated
+- New Task added for development phase.
+
+2023-10-21/22
+1. Login-register.php added
+
+2. Register.php added (collaboarated with SangKyu)
+- validation and sanitization for email and password
+- register user in database 
+- in progress 
+
+3. Login-register.html/.css/.js added
+- Design changed from previous
+
+4. user_settings.html/.css added
+
+5. login.php added
+- In progress
+
+2023-10-23
+1. menuItems.php added
+- In progress
+
+2. fsd10_victor database updated
+- menu_items table added (dish_id, dish_name, dish_description, dish_price, category, images)
+
+2023-10-24
+1. login.php
+- validation and sanitization for email and password
+- session begins
+
+2. index.php
+- login button added when not in session
+- profile button added when in sesssion
+
+3. Trello updated
+
+2023-10-25
+1. validation.php added
+- functions to validate (Email,Password,Dob,phone,address)
+- function to sanitization Email
+- function to Sanitization Password and hash Password
+
+2. profile.php -> client.php change
+- Contact Info, Delete account, orders added
+- validation in progress for update Contact info 
+
+3. deleteAccount.php added
+- in progress
+
+4. admin folder added
+- index.php (login) added
+- dashboard.php added
+
+5. users table altered
+- name, dob, phone, address added
+
+2023-10-26
+1. deleteAccount.php
+- confirm password before deleting user added.
+
+2023-10-27
+1. admin pages added
+- admin_menu.html
+- admin_orders.html
+- admin_users.html
+
+2023-10-28/29
+1. Seperated client.html to 5 parts into php added
+- updateAccount.php 
+- updatePassword.php
+- deleteAccount.php
+- user_navbar.php
+
+2. Created new attributes in users
+- roles (admin, user, fname, lname, address, phone, zip)
+
+3. Login.php updated
+- manage to login as an admin and redirect to dashboard.php
+
+4. Admin page in php addded
+- dashboard.php
+- admin_users.php (collaborated with Sang Kyu)
+- admin_menu_dashbd.php (update by Sang Kyu)
+- admin_orders.php
+- admin_employees.php
+- admin_sidebar.php
+
+5. CRUD in users section is done.
+
+6. Trello updated
+
+2023-10-31
+1. Search bar functional (collaborated with Sang Kyu)
+
+2. admin_userCount.php and admin_menuCount.php added
+- added on the dashboard
+
+3. emp_dashboard.php added
+- Service Status
+- Delivery
+
+
+
