@@ -32,6 +32,9 @@ Restaurant Delivery is a web application built with PHP.
 
 ## Installations
 
+- Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/restaurant-delivery.git
 
 ## Usage
 1. Start the client
@@ -50,8 +53,10 @@ Restaurant Delivery is a web application built with PHP.
     <img src="https://avatars.githubusercontent.com/u/135074885?v=4" width="25" height="25"/>
   </a>
 
- Figma URL
- [WireFrame]https://www.figma.com/file/iyZb6dDdKOZfMkuYS1n0PT/Wireframe?type=design&node-id=0%3A1&mode=design&t=7HjDzlFRua4Vqram-1
+ ## Figma URL
+ 
+ - [WireFrame](https://www.figma.com/file/iyZb6dDdKOZfMkuYS1n0PT/Wireframe?type=design&node-id=0%3A1&mode=design&t=7HjDzlFRua4Vqram-1)
 
- Trello Kanban Board
-  [Trello Board]https://trello.com/invite/b/XTLRN8hK/ATTIa032fc0b5d01f2f96e7f6db0108eb6feFFF1ACBA/restaurent-delivery
+ ## Trello Kanban Board URL
+ 
+- [Trello Board](https://trello.com/invite/b/XTLRN8hK/ATTIa032fc0b5d01f2f96e7f6db0108eb6feFFF1ACBA/restaurent-delivery)
